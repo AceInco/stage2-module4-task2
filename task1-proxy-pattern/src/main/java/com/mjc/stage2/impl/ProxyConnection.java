@@ -20,7 +20,7 @@ public class ProxyConnection implements Connection {
     @Override
     public void close() {
         connectionPool = ConnectionPool.getInstance();
-        connectionPool.releaseConnection(realConnection);
+        connectionPool.releaseConnection(this);
     }
 
     @Override
