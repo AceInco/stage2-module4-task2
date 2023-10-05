@@ -13,8 +13,8 @@ public class ProxyConnection implements Connection {
     }
 
     public void reallyClose() {
-        realConnection.close();
         close();
+        realConnection.close();
     }
 
     @Override
