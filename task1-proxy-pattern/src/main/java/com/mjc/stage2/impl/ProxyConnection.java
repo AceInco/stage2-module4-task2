@@ -14,6 +14,7 @@ public class ProxyConnection implements Connection {
 
     public void reallyClose() {
         realConnection.close();
+        close();
     }
 
     @Override
