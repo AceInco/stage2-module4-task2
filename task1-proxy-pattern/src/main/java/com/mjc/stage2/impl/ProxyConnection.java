@@ -9,7 +9,7 @@ public class ProxyConnection implements Connection {
 
     public ProxyConnection(RealConnection realConnection) {
         this.realConnection = realConnection;
-        this.connectionPool = ConnectionPool.getInstance();
+
     }
 
     public void reallyClose() {
@@ -19,6 +19,7 @@ public class ProxyConnection implements Connection {
 
     @Override
     public void close() {
+        connectionPool = ConnectionPool.getInstance();
         connectionPool.releaseConnection(realConnection);
     }
 
